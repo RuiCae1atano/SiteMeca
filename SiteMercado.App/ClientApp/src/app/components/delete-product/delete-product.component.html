@@ -1,0 +1,15 @@
+<h3 class="mb-5">Deletar produto?</h3>
+
+
+<div class="produt-detais" >
+  <img class="card-img-top" style="width: 18rem;" 
+ [src]="imagem" alt="Card image cap">  
+  <div class="card col-6" *ngIf="produto">  
+    <div class="card-body">
+      <h5 class="card-title">Nome: {{produto.nome}}</h5>
+      <h6 class="card-subtitle mb-4">Preço: R${{produto.valor}}</h6>
+      <a [routerLink]="['/produtos']" class="btn btn-primary mr-2">Voltar</a>
+      <a (click)="deleteProduto(produto.id)" class="btn btn-danger">Confimar</a>
+    </div>
+  </div>
+</div>

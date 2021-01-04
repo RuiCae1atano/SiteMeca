@@ -1,0 +1,21 @@
+
+
+<div class="new-produt">
+  <h3>Crie aqui os seus produtos</h3>
+  <form action="" [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title" class="required">Nome</label>
+      <input type="text" class="form-control" id="nome" formControlName="nome"  placeholder="Nome do Produto" />
+    </div>
+    <div class="form-group">
+      <label for="title" class="required">Valor</label>
+      <input type="number" class="form-control" id="valor" formControlName="valor" placeholder="Valor do Produto" />
+    </div>
+    <div class="form-group">
+      <label for="title" class="required">Url-Imagem</label>
+      <input type="text" class="form-control" id="imagem" formControlName="imagem" placeholder="Imagem do Produto" />
+    </div>
+    <button class="btn btn-success" type="submit">Adicionar</button>
+    <button class="btn btn-default" [routerLink]="['/produtos']">Cancelar</button>
+  </form>
+</div>

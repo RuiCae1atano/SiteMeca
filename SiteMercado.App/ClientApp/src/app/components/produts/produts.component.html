@@ -1,0 +1,29 @@
+<h1 id="tableLabel">Lista de Produtos</h1>
+
+<p>Apresentação de toda a lista de produtos</p>
+
+<p *ngIf="!produt"><em>Lendo...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="produt">
+  <thead>
+    <tr>
+
+      <th>Nome</th>
+      <th>Valor</th>
+      <th>Imagem</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produt of produt">
+
+      <td>{{ produt.nome }}</td>
+      <td>R${{ produt.valor }}</td>
+      <td>{{ produt.imagem }}</td>
+      <td>
+        <button type="button" class="btn btn-success btn-sm mr-2" (click)="showProduto(produt.id)">Detalhes</button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="deletaProduto(produt.id)" >Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
